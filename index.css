@@ -1,0 +1,113 @@
+body{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(39, 36, 34);
+}
+
+.calcSpace{
+    border: 10px solid white;
+    margin: auto;
+    width: 500px;
+}
+
+.calcShell{
+    width: 500px;
+    height: 600px;
+    background-color: rgb(0, 122, 122);
+    display: grid;
+    column-gap: 0px;
+    row-gap: 0px;
+    grid-template-areas:
+        "win win win win"
+        "ac ac del del"
+        "sev eig nin div"
+        "fou fiv six mul"
+        "one two thr min"
+        "zer dot equ plu";
+
+}
+
+.calcWindow{
+    grid-area: win;
+    font-size: 5rem;
+    font-weight: 900;
+    width:100%;
+    height: 100%;
+    text-align: right;
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calcAC{grid-area: ac;}
+.calcDel{grid-area: del}
+.calc7{grid-area: sev;}
+.calc8{grid-area: eig;}
+.calc9{grid-area: nin;}
+.calcDiv{grid-area: div;}
+.calc4{grid-area: fou;}
+.calc5{grid-area: fiv;}
+.calc6{grid-area: six;}
+.calcMul{grid-area: mul;}
+.calc1{grid-area: one;}
+.calc2{grid-area: two;}
+.calc3{grid-area: thr;}
+.calcMin{grid-area: min;}
+.calc0{grid-area: zer;}
+.calcDot{grid-area: dot;}
+.calcEq{grid-area: equ;}
+.calcPlu{grid-area: plu;}
+
+.butt{
+    font-size: 40px;
+    font-weight: 900;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.func{
+    font-size: 40px;
+    font-weight: 900;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.oper{
+    font-size: 40px;
+    font-weight: 900;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.func:hover{
+    background-color: rgb(143, 143, 0);
+}
+
+.oper:hover{
+    background-color: rgb(143, 143, 0);
+}
+
+.butt:hover{
+    background-color: rgb(143, 143, 0);
+}
