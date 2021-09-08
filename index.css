@@ -29,14 +29,15 @@ body{
 
 .calcWindow{
     grid-area: win;
-    font-size: 5rem;
+    font-size: 5em;
     font-weight: 900;
     width:100%;
+    max-width: 500px;
     height: 100%;
     text-align: right;
     margin: auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow:auto;
+    text-overflow:clip;
 }
 
 .calcAC{grid-area: ac;}
