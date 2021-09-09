@@ -137,8 +137,16 @@ plu.addEventListener(`click`, function(){
         operator = `+`;
         value1 = Number(windowValue);
         windowValue = `0`;
-        win.textContent = value1;
-        return;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }        
+    return;
     }
     if(value1 !== null){
         if(windowValue == `0`){
@@ -146,31 +154,64 @@ plu.addEventListener(`click`, function(){
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) + parseFloat(value2);
         operator = `+`;
         windowValue = `0`;
-        win.textContent = value1;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }    
     }
 });
 min.addEventListener(`click`, function(){
     win.style.color = `yellow`;
     if (value1 == null){
-        operator = `-`;
-        value1 = Number(windowValue);
-        windowValue = `0`
-        win.textContent = value1;
-        return;
+        if (windowValue == `0`){
+            windowValue = `-`;
+            win.style.color = `white`;
+            win.textContent = `-`;
+            return;
+        }
+    operator = `-`;
+    value1 = Number(windowValue);
+    windowValue = `0`;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }        
+    return;
     }
     if(value1 !== null){
         if(windowValue == `0`){
-            value2 = memory;
+            windowValue = `-`;
+            win.style.color = `white`;
+            win.textContent = `-`;
+            return;
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) - parseFloat(value2);
         operator = `-`;
         windowValue = `0`;
-        win.textContent = value1;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }    
     }
 });
 mul.addEventListener(`click`, function(){
@@ -179,7 +220,15 @@ mul.addEventListener(`click`, function(){
         operator = `*`;
         value1 = Number(windowValue);
         windowValue = `0`
-        win.textContent = value1;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }
         return;
     }
     if(value1 !== null){
@@ -188,10 +237,18 @@ mul.addEventListener(`click`, function(){
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) * parseFloat(value2);
         operator = `*`;
         windowValue = `0`;
-        win.textContent = formatter.format(value1);
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }
     }
 });
 div.addEventListener(`click`, function(){
@@ -200,8 +257,16 @@ div.addEventListener(`click`, function(){
         operator = `/`;
         value1 = Number(windowValue);
         windowValue = `0`
-        win.textContent = value1;
-        return;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }        
+    return;
     }
     if(value1 !== null){
         if(windowValue == `0`){
@@ -209,10 +274,18 @@ div.addEventListener(`click`, function(){
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) / parseFloat(value2);
         operator = `/`;
         windowValue = `0`;
-        win.textContent = formatter.format(value1);
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }
     }
 });
 equ.addEventListener(`click`, function(){
@@ -223,29 +296,58 @@ equ.addEventListener(`click`, function(){
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) + parseFloat(value2);
         windowValue = `0`;
-        win.textContent = formatter.format(value1);
-    }
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }    }
     else if (operator == `-`){
         if(windowValue == `0`){
             value2 = memory;
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) - parseFloat(value2);
         windowValue = `0`;
-        win.textContent = formatter.format(value1);
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }    
     }
     else if (operator == `/`){
         if(windowValue == `0`){
-            value2 = memory;
+            win.textContent = `(╯°□°)╯ ┻━┻`;
+            value1 = null;
+            value2 = null;
+            memory = null;
+            operator = `+`; //bugfix: equal spam to emoji after dividing number.
+            return;
         }
         else value2 = Number(windowValue);
+        operator = `+`; //bugfix: equal spam to emoji after dividing number.
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) / parseFloat(value2);
         windowValue = `0`;
-        win.textContent = formatter.format(value1);
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }    
     }
     else if (operator == `*`){
         if(windowValue == `0`){
@@ -253,13 +355,17 @@ equ.addEventListener(`click`, function(){
         }
         else value2 = Number(windowValue);
         memory = value2;
-        value1 = eval(value1 + operator +  value2);
+        value1 = parseFloat(value1) * parseFloat(value2);
         windowValue = `0`;
-        win.textContent = formatter.format(value1);
-    }
-    else{
-        windowValue = `equal function error`;
-        win.textContent = windowValue;
+        if (value1.toString().length > 8 && value1 > 1000){
+            win.textContent = value1.toExponential(2);
+        }
+        else if (value1.toString().length > 8 && value1 < 0){
+            win.textContent = value1.toExponential(2);
+        }
+        else{
+            win.textContent = formatter.format(value1);
+        }    
     }
     value1 = null;
     value2 = null;

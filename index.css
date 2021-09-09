@@ -29,7 +29,7 @@ body{
 
 .calcWindow{
     grid-area: win;
-    font-size: 5em;
+    font-size: 4.8em;
     font-weight: 900;
     width:100%;
     max-width: 500px;
